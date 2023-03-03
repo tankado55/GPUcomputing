@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/jiowsl/projects/GPUcomputing/lab1/MQDB/main.cpp
+mqdb.h
+/home/jiowsl/projects/GPUcomputing/lab1/MQDB/mqdb.h
+
+/home/jiowsl/projects/GPUcomputing/lab1/MQDB/mqdb.cpp
+mqdb.h
+/home/jiowsl/projects/GPUcomputing/lab1/MQDB/mqdb.h
+
+/home/jiowsl/projects/GPUcomputing/lab1/MQDB/mqdb.h
+cstdio
+-
+stdlib.h
+-
+string.h
+-
+math.h
+-
+sys/time.h
+-
+time.h
+-
+
+/home/jiowsl/projects/GPUcomputing/lab1/MQDB/prod_mqdb.cpp
+mqdb.h
+/home/jiowsl/projects/GPUcomputing/lab1/MQDB/mqdb.h
+
