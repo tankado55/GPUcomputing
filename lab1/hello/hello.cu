@@ -11,7 +11,7 @@ __global__ void helloFromGPU (void) {
 int main(void) {
     // hello from GPU 
     cout << "Hello World from CPU!" << endl;
-    cudaSetDevice(0);
+    cudaSetDevice(1);
     helloFromGPU <<<1, 10>>>();
     cudaDeviceSynchronize();
     return 0;

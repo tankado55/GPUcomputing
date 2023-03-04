@@ -5,10 +5,10 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "(gdb) Launch 2",
+            "name": "(gdb) Launch hello",
             "type": "cppdbg",
             "request": "launch",
-            "program": "enter program name, for example ${workspaceFolder}/2",
+            "program": "${workspaceFolder}/build/hello",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${fileDirname}",
@@ -29,7 +29,7 @@
             ]
         },
         {
-            "name": "(gdb) Launch",
+            "name": "(gdb) Launch MQDB",
             "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceFolder}/build/MQDB",

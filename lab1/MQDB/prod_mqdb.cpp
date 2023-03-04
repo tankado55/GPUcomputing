@@ -16,10 +16,6 @@ void mqdbProd(mqdb A, mqdb B, mqdb C) {
 				    double a = A.elem[r * n + blockOffset + l];
 				    double b = B.elem[(l + blockOffset) * n + c];
 				    sum += a*b;
-						printf("mydebug r: %d\n", r);
-						printf("mydebug c: %d\n", c);
-						printf("mydebug index a: %d\n", r * n + l);
-						printf("mydebug index b: %d\n", l * n + c);
 			    }
 			  C.elem[r * n + c] = (float)sum;				
 		  }

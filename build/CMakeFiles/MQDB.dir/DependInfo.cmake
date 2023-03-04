@@ -1,17 +1,16 @@
+
+# Consider dependencies only in project.
+set(CMAKE_DEPENDS_IN_PROJECT_ONLY OFF)
+
 # The set of languages for which implicit dependencies are needed:
 set(CMAKE_DEPENDS_LANGUAGES
-  "CXX"
   )
-# The set of files for implicit dependencies of each language:
-set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/jiowsl/projects/GPUcomputing/lab1/MQDB/main.cpp" "/home/jiowsl/projects/GPUcomputing/build/CMakeFiles/MQDB.dir/main.cpp.o"
-  "/home/jiowsl/projects/GPUcomputing/lab1/MQDB/mqdb.cpp" "/home/jiowsl/projects/GPUcomputing/build/CMakeFiles/MQDB.dir/mqdb.cpp.o"
-  "/home/jiowsl/projects/GPUcomputing/lab1/MQDB/prod_mqdb.cpp" "/home/jiowsl/projects/GPUcomputing/build/CMakeFiles/MQDB.dir/prod_mqdb.cpp.o"
-  )
-set(CMAKE_CXX_COMPILER_ID "GNU")
 
-# The include file search paths:
-set(CMAKE_CXX_TARGET_INCLUDE_PATH
+# The set of dependency files which are needed:
+set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/home/jio/projects/GPUcomputing/lab1/MQDB/main.cpp" "CMakeFiles/MQDB.dir/main.cpp.o" "gcc" "CMakeFiles/MQDB.dir/main.cpp.o.d"
+  "/home/jio/projects/GPUcomputing/lab1/MQDB/mqdb.cpp" "CMakeFiles/MQDB.dir/mqdb.cpp.o" "gcc" "CMakeFiles/MQDB.dir/mqdb.cpp.o.d"
+  "/home/jio/projects/GPUcomputing/lab1/MQDB/prod_mqdb.cpp" "CMakeFiles/MQDB.dir/prod_mqdb.cpp.o" "gcc" "CMakeFiles/MQDB.dir/prod_mqdb.cpp.o.d"
   )
 
 # Targets to which this target links.

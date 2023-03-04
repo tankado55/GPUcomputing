@@ -1,7 +1,10 @@
 file(REMOVE_RECURSE
   "CMakeFiles/MQDB.dir/main.cpp.o"
+  "CMakeFiles/MQDB.dir/main.cpp.o.d"
   "CMakeFiles/MQDB.dir/mqdb.cpp.o"
+  "CMakeFiles/MQDB.dir/mqdb.cpp.o.d"
   "CMakeFiles/MQDB.dir/prod_mqdb.cpp.o"
+  "CMakeFiles/MQDB.dir/prod_mqdb.cpp.o.d"
   "MQDB"
   "MQDB.pdb"
 )
