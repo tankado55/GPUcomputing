@@ -2,7 +2,10 @@
 .DS_Store
 
 build/
+<<<<<<< HEAD
 
 julia_jet.bmp
 julia_jetV.bmp
 
+=======
+>>>>>>> 3783066 (a lot)
