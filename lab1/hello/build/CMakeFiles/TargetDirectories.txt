@@ -1,0 +1,3 @@
+/home/jio/projects/GPUcomputing/lab1/hello/build/CMakeFiles/hello.dir
+/home/jio/projects/GPUcomputing/lab1/hello/build/CMakeFiles/edit_cache.dir
+/home/jio/projects/GPUcomputing/lab1/hello/build/CMakeFiles/rebuild_cache.dir
