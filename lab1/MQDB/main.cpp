@@ -29,11 +29,15 @@ void mqdbProd(mqdb A, mqdb B, mqdb C) {
  */
 int main(void) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	uint n = 1024;      // matrix size
 
 =======
 	uint n = 2*1024;      // matrix size
 >>>>>>> e3fbe13 (Update main.cpp)
+=======
+	uint n = 1024;      // matrix size
+>>>>>>> 7fb6810 (a lot)
 	uint k = 20;          // num of blocks
 	mqdb A, B, C, C1;     // mqdb host matrices
 
