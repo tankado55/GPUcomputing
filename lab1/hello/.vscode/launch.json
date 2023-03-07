@@ -5,15 +5,20 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "CUDA: Debug with CUDA-GDB",
+            "type": "cuda-gdb",
+            "request": "launch",
+            "gdb": "cuda-gdb",
+            "program": "${workspaceFolder}/build/hello"
+        },
+
+
+        
+        {
             "name": "CUDA C++: Launch",
             "type": "cuda-gdb",
             "request": "launch",
-            "program": "${workspaceFolder}/hello"
-        },
-        {
-            "name": "CUDA C++: Attach",
-            "type": "cuda-gdb",
-            "request": "attach"
+            "program": "${workspaceFolder}/build/hello"
         }
     ]
 }
