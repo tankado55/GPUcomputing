@@ -9,14 +9,43 @@
  */
 __global__ void VflipGPU(pel *imgDst, const pel *imgSrc, const uint w, const uint h) {
 	// TODO
+	int globalID = blockDim.x * blockIdx.x + threadIdx.x;
+	int nullAtEachRow = (4 - (w % 4)) % 4;
+	int row = globalID / (w + nullAtEachRow);
+	int rowSource = h - 1 - row;
+	int mappedId = globalID + (row * nullAtEachRow);
+	int col = mappedId % w;
+	
+	if (globalID < w * h) {
+		int dst = mappedId*3;
+		int src = ((rowSource * (w + nullAtEachRow)) + col) * 3;
+		imgDst[dst] = imgSrc[src];
+		imgDst[dst+1] = imgSrc[src+1];
+		imgDst[dst+2] = imgSrc[src+2];
+	}
+
 }
 
 /*
  *  Kernel that flips the given image horizontally
  *  each thread only flips a single pixel (R,G,B)
  */
-__global__ void HflipGPU(pel *ImgDst, pel *ImgSrc, uint width) {
-	//TODO
+__global__ void HflipGPU(pel *imgDst, pel *imgSrc, uint w, const uint h) {
+	//TODO, ho modificato la signature aggiungendo h, chiedere se era necessario
+	int globalID = blockDim.x * blockIdx.x + threadIdx.x;
+	int nullAtEachRow = (4 - (w % 4)) % 4;
+	int row = globalID / (w + nullAtEachRow);	
+	int mappedId = globalID + (row * nullAtEachRow);
+	int col = mappedId % w;
+	int colSource = w - 1 - col;
+	
+	if (globalID < w * h) {
+		int dst = mappedId*3;
+		int src = ((row * (w + nullAtEachRow)) + colSource) * 3;
+		imgDst[dst] = imgSrc[src];
+		imgDst[dst+1] = imgSrc[src+1];
+		imgDst[dst+2] = imgSrc[src+2];
+	}
 }
 
 /*
@@ -126,7 +155,7 @@ int main(int argc, char **argv) {
 
 	switch (flip) {
 	case 'H':
-		HflipGPU<<<dimGrid, b>>>(imgDstGPU, imgSrcGPU, WIDTH);
+		HflipGPU<<<dimGrid, b>>>(imgDstGPU, imgSrcGPU, WIDTH, HEIGHT);
 		break;
 	case 'V':
 		VflipGPU<<<dimGrid, b>>>(imgDstGPU, imgSrcGPU, WIDTH, HEIGHT);
