@@ -2,5 +2,7 @@
 .DS_Store
 
 build/
+
 julia_jet.bmp
 julia_jetV.bmp
+
