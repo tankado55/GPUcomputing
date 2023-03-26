@@ -34,6 +34,46 @@ __global__ void matProd(mqdb A, mqdb B, mqdb C, int n) {
 __global__ void mqdbBlockProd(mqdb A, mqdb B, mqdb C, int sdim, int d, int n) {
 	 
 	 // TODO
+	int globalIdx = blockDim.x * blockIdx.x + threadIdx.x;
+
+	int blockOffset = 0;
+	int elementsOff = 0;
+	int diagonalIdx = 0;
+
+	int vectorMult = 0;
+
+	if (globalIdx >= sdim) {
+		return;
+	}
+
+	for (int i = 0; i < A.nBlocks; i++)
+	{
+		diagonalIdx = i;
+		if (globalIdx < blockOffset + (A.blkSize[i] * A.blkSize[i])) {
+			break;
+		}
+		blockOffset += A.blkSize[i];
+		elementsOff += A.blkSize[i] * A.blkSize[i];
+	}
+
+	int localR = (globalIdx - elementsOff) / A.blkSize[diagonalIdx];
+	int localC = (globalIdx - elementsOff) % A.blkSize[diagonalIdx];
+
+	int globalR = localR + blockOffset;
+	int globalC = localC + blockOffset;
+
+	for (int i = 0; i < A.blkSize[diagonalIdx]; i++)
+	{
+		double a = A.elem[globalR * n + blockOffset + i];
+		double b = B.elem[(i + blockOffset) * n + globalC];
+		vectorMult += a * b;
+		C.elem[globalR * n + globalC] = vectorMult;
+		
+	}
+	
+
+
+	
 }
 
 /*
@@ -108,6 +148,16 @@ void testKernelsMQDB(uint n, uint k, struct tms* times) {
 	start = seconds();
 	
 	  // TODO
+	uint n2 = 0;
+	for (uint i = 0; i < A.nBlocks; i++) {
+		n2 += A.blkSize[i];
+		sdim += A.blkSize[i] * A.blkSize[i];
+	}
+		
+	dim3 block2(BLOCK_SIZE);
+	dim3 grid2((sdim + block.x - 1) / block.x);
+
+	mqdbBlockProd<<<grid2, block2>>>(d_A, d_B, d_C, sdim, 0, n2);
 
 	CHECK(cudaDeviceSynchronize());
 	double GPUtime2 = seconds() - start;
