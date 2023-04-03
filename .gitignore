@@ -2,13 +2,10 @@
 .DS_Store
 
 build/
-<<<<<<< HEAD
-<<<<<<< HEAD
 
 julia_jet.bmp
 julia_jetV.bmp
 
-=======
->>>>>>> 3783066 (a lot)
-=======
->>>>>>> 7fb6810 (a lot)
+.vscode
+
+
