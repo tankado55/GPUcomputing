@@ -1,1 +1,0 @@
-/usr/bin/g++ -g -rdynamic CMakeFiles/MQDB.dir/main.cpp.o CMakeFiles/MQDB.dir/mqdb.cpp.o CMakeFiles/MQDB.dir/prod_mqdb.cpp.o -o MQDB 
