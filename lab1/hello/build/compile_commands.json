@@ -1,7 +1,0 @@
-[
-{
-  "directory": "/home/jio/projects/GPUcomputing/lab1/hello/build",
-  "command": "/usr/local/cuda-12.1/bin/nvcc -forward-unknown-to-host-compiler   -g -x cu -c /home/jio/projects/GPUcomputing/lab1/hello/hello.cu -o CMakeFiles/hello.dir/hello.cu.o",
-  "file": "/home/jio/projects/GPUcomputing/lab1/hello/hello.cu"
-}
-]
